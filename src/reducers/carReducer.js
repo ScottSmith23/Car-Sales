@@ -17,28 +17,20 @@ export const initialState = {
 
 // default parameters (advanced JS feature)
 export const carReducer = (state = initialState, action) => {
-  console.log('&&&&&&&&&', state, action);
   switch (action.type) {
-    case 'UPDATE_TITLE':
-      return {
-        ...state,
-        title: action.payload,
-        editing: false
-      };
-    // NEW CASE HERE
-    case 'TOGGLE_EDITING':
+    case 'REMOVE_FEATURE':
       return {
         ...state,
         editing: !state.editing
       };
-    // case 'ADD_FEATURE':
-    //   return {
-    //     ...state,
-    //     car: {
-    //       ...state.car,
-    //       features: [...state.car.features, action.payload]
-    //     }
-    //   }
+    case 'ADD_FEATURE':
+      return {
+        ...state,
+        car: {
+          ...state.car,
+          features: [...state.car.features, action.payload]
+        }
+      }
     default:
       return state;
   }
