@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 const AdditionalFeature = props => {
+
+  
   const addF = (e) => {
     e.preventDefault();
-    
-    const obj = props.feature;
-    console.log(obj);
-    // props.addFeature(obj);
+    console.log(props.feature);
+    props.addFeature(props.feature)
   }
 
   return (
