@@ -8,6 +8,7 @@ import {connect,useSelector, useDispatch} from 'react-redux';
 import {addFeature, removeFeature} from './actions/carActions'
 
 const App = (props) => {
+  
   //state redux hooks
   const carData = useSelector(state => state.car)
   const featureData = useSelector(state => state.additionalFeatures)
