@@ -10,9 +10,7 @@ import {addFeature, removeFeature} from './actions/carActions'
 const App = (props) => {
   
   //state redux hooks
-  const carData = useSelector(state => state.car)
-  const featureData = useSelector(state => state.additionalFeatures)
-  const priceData = useSelector(state => state.additionalPrice)
+  const carData = useSelector(state => state)
   //dispatch redux hooks
   const dispatch = useDispatch()
   const addF = useCallback((e)=>dispatch(addFeature(e)),[dispatch])
@@ -21,12 +19,12 @@ const App = (props) => {
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={carData} />
-        <AddedFeatures car={carData} removeFeature={removeF} />
+        <Header car={carData.car} />
+        <AddedFeatures car={carData.car} removeFeature={removeF} />
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={featureData} addFeature={addF} />
-        <Total car={carData} additionalPrice={priceData} />
+        <AdditionalFeatures additionalFeatures={carData.additionalFeatures} addFeature={addF} />
+        <Total car={carData.car} additionalPrice={carData.additionalPrice} />
       </div>
     </div>
   );
