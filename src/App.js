@@ -9,13 +9,13 @@ import {addFeature, removeFeature} from './actions/carActions'
 const App = (props) => {
 
   // const removeFeature = item => {
-  //   removeAFeature(item);
+    
   // };
 
-  const buyItem = item => {
-    // dipsatch an action here to add an item
-  };
-console.log(props.car.features)
+  // const buyItem = item => {
+  //   // dipsatch an action here to add an item
+  // };
+
   return (
     <div className="boxes">
       <div className="box">
